@@ -1,22 +1,17 @@
 function dateFormatter(date){
   
 var dateLength = date.length;
+//target date string ==> dd/mm/yyyy
 var dateString = '';
     switch (dateLength) {
             case 10: //dd/mm/yyyy
-                  var dd = date.split('/');
-                 var y = dd[2];
-                 var m = dd[1];
-                 var d = dd[0];
-                  dateString += d
-                  dateString += '/'
-                  dateString += m
-                  dateString += '/'
-                  dateString += y;
+                  dateString += date;
                   break;
+                  
             case 9: //d/mm/yyyy @ dd/m/yyyy
-                  var dd = date.split('/');
-                 var y = (dd[2].length == 2?('20'+dd[2]):dd[2]);
+                  var dd = date.split('/');// dd=[d,m,y]
+                  
+                 var y = dd[2];
                  var m = (dd[1].length == 2?(dd[1]):('0'+dd[1]));
                  var d = (dd[0].length == 2?(dd[0]):('0'+dd[0]));
 
